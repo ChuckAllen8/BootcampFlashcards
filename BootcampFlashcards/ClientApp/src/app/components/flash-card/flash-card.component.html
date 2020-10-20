@@ -1,4 +1,9 @@
 <p>{{card.question}}, {{card.answer}}</p>
-<ng-container *ngIf="user.username">
+<ng-container *ngIf="user.username && !isFavorite">
   <button (click)="favorite()">Add Favorite</button>
+</ng-container>
+<ng-container *ngIf="user.username && isFavorite">
+
+  <button (click)="removefav()">Delete</button>
+
 </ng-container>
