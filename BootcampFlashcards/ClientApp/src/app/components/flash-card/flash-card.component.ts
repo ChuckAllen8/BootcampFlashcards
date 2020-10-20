@@ -9,7 +9,12 @@ import { SignedInUserService } from '../../services/signed-in-user.service';
 })
 export class FlashCardComponent implements OnInit {
   @Input() card: Flashcard;
+  @Input() isFavorite: boolean;
+  
   @Output() favorited: EventEmitter<Flashcard> = new EventEmitter();
+  @Output() remove: EventEmitter<Flashcard> = new EventEmitter();
+
+
   constructor(private user: SignedInUserService) { }
 
   ngOnInit() {
@@ -17,5 +22,9 @@ export class FlashCardComponent implements OnInit {
 
   favorite() {
     this.favorited.emit(this.card);
+  }
+
+  removefav() {
+    this.remove.emit(this.card);
   }
 }
