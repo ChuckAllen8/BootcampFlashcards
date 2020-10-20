@@ -18,7 +18,7 @@ namespace BootcampFlashcards.Controllers
         {
             data = dal;
         }
-        [HttpGet]
+        [HttpGet("{username}")]
         public IEnumerable<FlashCard> GetFavs(string username)
         {
             List<Favorite> favs =  data.GetFavorites(username).ToList();
@@ -32,12 +32,14 @@ namespace BootcampFlashcards.Controllers
             }
             return results;
         }
+
         [HttpPost]
-        public Object AddFav(string username, long questionID)
+        public Object AddFav(Favorite fav)
         {
-            return data.AddFavorite(username, questionID);
+            return data.AddFavorite(fav.username, fav.questionID);
         }
-        [HttpDelete]
+
+        [HttpDelete("{username}/{questionID}")]
         public Object RemoveFav(string username, long questionID)
         {
             return data.RemoveFavorite(username, questionID);
