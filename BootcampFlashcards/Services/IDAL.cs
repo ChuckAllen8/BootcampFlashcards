@@ -6,7 +6,7 @@ using BootcampFlashcards.Models;
 
 namespace BootcampFlashcards.Services
 {
-    interface IDAL
+    public interface IDAL
     {
         IEnumerable<FlashCard> GetQuestions();
         Object AddQuestion(FlashCard card);
