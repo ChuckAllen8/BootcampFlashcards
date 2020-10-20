@@ -1,4 +1,6 @@
-<p>{{card.question}}, {{card.answer}}</p>
+<p *ngIf="!flipped">{{card.question}}</p>
+<p *ngIf="flipped">{{card.answer}}</p>
+<button (click)="flip()">Flip Card</button>
 <ng-container *ngIf="user.username && !isFavorite">
   <button (click)="favorite()">Add Favorite</button>
 </ng-container>

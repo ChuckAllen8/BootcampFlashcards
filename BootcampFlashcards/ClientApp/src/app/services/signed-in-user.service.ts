@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,11 @@ export class SignedInUserService {
     this.username = user;
   }
 
-  validateUser(user: string) {
+  validateUser(user: string): boolean {
     if (user != '') {
       this.username = user;
+      return true;
     }
+    return false;
   }
 }

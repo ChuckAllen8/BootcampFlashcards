@@ -1,5 +1,5 @@
 <h1>Study Buddy Flashcards!</h1>
-<app-add-card></app-add-card>
+<app-add-card (added)="onAdd($event)"></app-add-card>
 <ng-container *ngIf="cards">
   <app-flash-card *ngFor="let c of cards" [card]="c" (favorited)="onFavorite($event)"></app-flash-card>
 </ng-container>

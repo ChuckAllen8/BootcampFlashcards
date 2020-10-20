@@ -12,12 +12,19 @@ export class HomePageComponent implements OnInit {
   constructor(private data: FlashCardDataService) { }
 
   ngOnInit() {
-    this.data.getFlashCards().subscribe(results => {
-      this.cards = results;
-    });
+    this.data.getCards().subscribe(results => this.cards = results);
+    this.refreshCards();
   }
 
   onFavorite(card: Flashcard) {
     this.data.addFavorites(card.id).subscribe();
+  }
+
+  refreshCards(): void {
+    this.data.getFlashCards().subscribe(results => this.data.addCardsToList(results));
+  }
+
+  onAdd(card: Flashcard) {
+    this.data.addFlashCard(card).subscribe(() => this.refreshCards());
   }
 }

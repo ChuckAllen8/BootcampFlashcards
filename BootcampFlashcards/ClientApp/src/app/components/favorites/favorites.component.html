@@ -1,7 +1,4 @@
 <ng-container *ngIf="user.username">
   <app-flash-card *ngFor="let f of favCards" [card]="f" [isFavorite]="true" (remove)="onRemove($event)"></app-flash-card>
 </ng-container>
-<ng-container *ngIf="!user.username">
-  Username: <input #loginBox type="text" /> <button (click)="user.validateUser(loginBox.value)">Login</button>
-</ng-container>
 

@@ -20,20 +20,16 @@
         [ngClass]="{ show: isExpanded }"
       >
         <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"><a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/favorites']">
-              <ng-container *ngIf="user.username">
-                Favorites
-              </ng-container>
-              <ng-container *ngIf="!user.username">
-                Login
-              </ng-container>
-            </a>
+          <li *ngIf="user.username" class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/favorites']">Favorites</a>
+          </li>
+          <li *ngIf="!user.username" class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
           </li>
         </ul>
       </div>

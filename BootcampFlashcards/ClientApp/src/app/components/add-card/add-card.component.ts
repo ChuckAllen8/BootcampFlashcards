@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Flashcard } from '../../interfaces/Flashcard';
 import { FlashCardDataService } from '../../services/flash-card-data.service';
 
@@ -12,15 +12,21 @@ export class AddCardComponent implements OnInit {
 
   card: Flashcard;
 
-  constructor(private data: FlashCardDataService) {
+  @Output() added: EventEmitter<Flashcard> = new EventEmitter();
 
+  constructor() {
   }
 
-  ngOnInIt() {
-    this.card = { question: "", answer: "", id: null };
+  ngOnInit() {
+    this.newCard();
+  }
+
+  newCard() {
+    this.card = { question: "", answer: "", id: -1 };
   }
 
   addCard() {
-    this.data.addFlashCard(this.card).subscribe();    
+    this.added.emit(this.card);
+    this.newCard();
   }
 }

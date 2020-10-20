@@ -13,11 +13,16 @@ export class FlashCardComponent implements OnInit {
   
   @Output() favorited: EventEmitter<Flashcard> = new EventEmitter();
   @Output() remove: EventEmitter<Flashcard> = new EventEmitter();
-
+  flipped: boolean;
 
   constructor(private user: SignedInUserService) { }
 
   ngOnInit() {
+    this.flipped = false;
+  }
+
+  flip() {
+    this.flipped = !this.flipped;
   }
 
   favorite() {
