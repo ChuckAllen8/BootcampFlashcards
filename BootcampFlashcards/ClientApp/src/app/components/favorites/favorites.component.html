@@ -1,0 +1,6 @@
+<ng-container *ngIf="user.username">
+
+</ng-container>
+<ng-container *ngIf="!user.username">
+  Username: <input #loginBox type="text" /> <button (click)="user.validateUser(loginBox.value)">Login</button>
+</ng-container>

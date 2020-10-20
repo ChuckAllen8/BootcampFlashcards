@@ -1,0 +1,4 @@
+<p>{{card.question}}, {{card.answer}}</p>
+<ng-container *ngIf="user.username">
+  <button (click)="favorite()">Add Favorite</button>
+</ng-container>
