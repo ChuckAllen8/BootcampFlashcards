@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
 })
 export class FavoritesComponent implements OnInit {
 
-  favCards: Flashcard[];
-
   constructor(private data: FlashCardDataService, private user: SignedInUserService, private route: Router) { }
 
   ngOnInit() {
@@ -23,17 +21,12 @@ export class FavoritesComponent implements OnInit {
   }
 
   refreshList() {
-    this.data.getFavorites().subscribe(results => {
-      this.favCards = results;
-    });
+    this.user.getFavorites();
   }
 
   onRemove(card: Flashcard) {
-    this.data.deleteFavorite(card.id).subscribe(() => {
+    this.data.deleteFavorite(this.user.username, card.id).subscribe(() => {
       this.refreshList();
     });
   }
-
-  
-
 }

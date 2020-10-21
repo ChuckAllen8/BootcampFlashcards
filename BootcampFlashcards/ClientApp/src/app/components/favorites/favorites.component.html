@@ -1,4 +1,7 @@
-<ng-container *ngIf="user.username">
-  <app-flash-card *ngFor="let f of favCards" [card]="f" [isFavorite]="true" (remove)="onRemove($event)"></app-flash-card>
-</ng-container>
+<div class="center">
+  <ng-container *ngIf="user.username">
+    <app-flash-card *ngFor="let f of this.user.favorites" [card]="f" [isFavorite]="true" (remove)="onRemove($event)"></app-flash-card>
+  </ng-container>
+</div>
+
 

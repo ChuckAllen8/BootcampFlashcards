@@ -1,11 +1,18 @@
-<p *ngIf="!flipped">{{card.question}}</p>
-<p *ngIf="flipped">{{card.answer}}</p>
-<button (click)="flip()">Flip Card</button>
-<ng-container *ngIf="user.username && !isFavorite">
-  <button (click)="favorite()">Add Favorite</button>
-</ng-container>
-<ng-container *ngIf="user.username && isFavorite">
-
-  <button (click)="removefav()">Delete</button>
-
-</ng-container>
+<div class="scene">
+  <div class="flip-card" [ngClass]="{'is-flipped': flipped}" (click)="flip()">
+    <div class="flip-card-face back">
+      {{card.question}}
+    </div>
+    <div class="flip-card-face front">
+      {{card.answer}}
+    </div>
+  </div>
+  <div class="flip-card-bottom">
+    <ng-container *ngIf="user.username && !isFavorite">
+      <button (click)="favorite()">Add Favorite</button>
+    </ng-container>
+    <ng-container *ngIf="user.username && isFavorite">
+      <button (click)="removefav()">Delete</button>
+    </ng-container>
+  </div>
+</div>
