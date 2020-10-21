@@ -18,6 +18,10 @@ code {
 .navbar {
   background-color: #F8F8FF;
   padding: 5px 5px 5px 5px;
+  position:fixed;
+  top: auto;
+  width: 100%;
+  z-index: 4;
 }
 
 .nav-item:hover{
@@ -83,6 +87,7 @@ body {
     display: flex;
     align-content: center;
     z-index: 3;
+    top:80px;
 }
 
 .container {
