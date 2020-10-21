@@ -55,7 +55,9 @@ code {
 }
 
 .center {
+  z-index: 2;
   background-color: aliceblue;
+  opacity: 1;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
@@ -71,6 +73,90 @@ body {
   background-color: #6099fc;
   background-image: linear-gradient(to bottom right, #6099fc, black);
 }
+
+
+.box {
+    z-index: 0;
+    position: absolute;
+    background-color: transparent;
+    border: 6px solid rgba(255,255,255, 0.8);
+    width: 60px;
+    height: 60px;
+}
+
+.spinner-1{
+    top: 12%;
+    left: 42%;
+    animation: animate 10s linear infinite;
+}
+
+.spinner-2 {
+  top: 70%;
+  left: 50%;
+  animation: animate 7s linear infinite;
+}
+
+.spinner-3 {
+  top: 17%;
+  left: 6%;
+  animation: animate 9s linear infinite;
+}
+
+.spinner-4 {
+  top: 20%;
+  left: 60%;
+  animation: animate 10s linear infinite;
+}
+
+.spinner-5 {
+  top: 67%;
+  left: 10%;
+  animation: animate 6s linear infinite;
+}
+
+.spinner-6 {
+  top: 80%;
+  left: 70%;
+  animation: animate 12s linear infinite;
+}
+
+.spinner-7 {
+  top: 60%;
+  left: 80%;
+  animation: animate 15s linear infinite;
+}
+
+.spinner-8 {
+  top: 32%;
+  left: 25%;
+  animation: animate 16s linear infinite;
+}
+.spinner-9 {
+  top: 90%;
+  left: 25%;
+  animation: animate 9s linear infinite;
+}
+.spinner-10 {
+  top: 20%;
+  left: 80%;
+  animation: animate 5s linear infinite;
+}
+
+  @keyframes animate{
+      0%{
+          z-index: 0;
+          transform: scale(0) translateY() rotate(0);
+          opacity: 1;
+      }
+    100% {
+        z-index: 0;
+      transform: scale(1.3) translateY(-90px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+
+
 
 h1 {
   color: #00008B;
