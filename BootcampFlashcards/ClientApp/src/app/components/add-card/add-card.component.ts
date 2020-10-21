@@ -31,6 +31,9 @@ export class AddCardComponent implements OnInit {
 
   addCard() {
     if (this.card.answer != '' && this.card.question != '') {
+      if (this.card.question.indexOf('?') < 0) {
+        this.card.question = this.card.question + '?';
+      }
       this.added.emit(this.card);
       this.newCard();
       this.answerError = false;
