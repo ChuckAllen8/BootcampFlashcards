@@ -1,3 +1,4 @@
+<h2>Welcome To The Study Buddy Flash Cards!</h2><br />
 <ng-container *ngIf="!user.username">
-  Username: <input #loginBox type="text" /> <button (click)="login(loginBox.value)">Login</button>
+  <input #loginBox type="text" placeholder="Username" required/> &nbsp; <button (click)="login(loginBox.value)">Login</button>
 </ng-container>
