@@ -8,11 +8,14 @@
     </div>
   </div>
   <div class="flip-card-bottom">
-    <ng-container *ngIf="user.username && !isFavorite">
-      <button (click)="favorite()">Add Favorite</button>
+    <!--<ng-container *ngIf="user.username && !isFavorite">
+      <button (click)="favorite()">Favorite</button>
     </ng-container>
     <ng-container *ngIf="user.username && isFavorite">
-      <button (click)="removefav()">Delete</button>
-    </ng-container>
+      <button (click)="removefav()">Un-Favorite</button>
+    </ng-container>-->
+    <button *ngIf="user.username" (click)="isFavorite ? removefav() : favorite()" [ngClass]="{'favorite': isFavorite, 'not-favorite': !isFavorite}">
+      Favorite
+    </button>
   </div>
 </div>

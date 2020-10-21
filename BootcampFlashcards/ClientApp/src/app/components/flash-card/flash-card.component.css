@@ -1,22 +1,22 @@
 .scene {
   display: inline-block;
-  border-style: inset;
-  border-radius: 5px;
-  border-color: rgb(100, 100, 100);
-  border-width: medium;
   margin: 5px;
-  width: 200px;
+  width: 275px;
   height: 220px;
   perspective: 600px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
 }
 
 .flip-card {
   height: 75%;
   position: relative;
-  transition: transform 1s;
+  transition: transform 1s ease-in-out;
   transform-style: preserve-3d;
   transform-origin: center right;
   cursor: pointer;
+
 }
 
 .flip-card.is-flipped {
@@ -34,7 +34,8 @@
 }
 
 .flip-card:hover {
-  background-color: #4F95DA;
+  transition:  1s ease-in-out;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .flip-card-face.front {
@@ -61,7 +62,6 @@
   justify-content: center;
   vertical-align: middle;
   border-top: 2px solid black;
-  border-radius: 5px;
 }
 
 
@@ -78,21 +78,29 @@ button {
 
 
 
-  button:hover {
-    transition: 0.25s ease-in-out;
-    background: #4F95DA;
-  }
+button:hover {
+  transition: 0.25s ease-in-out;
+  background: #4F95DA;
+}
 
 
 
-    button:hover svg {
-      stroke-dashoffset: -480;
-    }
+button:hover svg {
+  stroke-dashoffset: -480;
+}
 
 
 
-  button span {
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
-  }
+button span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.favorite {
+    background-color: goldenrod;
+}
+
+.not-favorite {
+    color: #a3a7a8;
+}
