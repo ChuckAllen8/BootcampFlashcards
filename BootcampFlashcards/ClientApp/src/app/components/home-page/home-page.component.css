@@ -1,0 +1,31 @@
+button {
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid #91C9FF;
+  outline: none;
+  transition: 0.25s ease-in-out;
+}
+
+
+
+  button:hover {
+    transition: 0.25s ease-in-out;
+    background: #4F95DA;
+  }
+
+
+
+    button:hover svg {
+      stroke-dashoffset: -480;
+    }
+
+
+
+  button span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }

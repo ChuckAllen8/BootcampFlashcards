@@ -1,4 +1,8 @@
-<h2>Welcome To The Study Buddy Flash Cards!</h2><br />
-<ng-container *ngIf="!user.username">
-  <input #loginBox type="text" placeholder="Username" required/> &nbsp; <button (click)="login(loginBox.value)">Login</button>
-</ng-container>
+<div class="center">
+  <h1>Welcome To The Study Buddy Flash Cards!</h1>
+  <br />
+  <ng-container *ngIf="!user.username">
+    <input #loginBox type="text" placeholder="Username" required /> &nbsp; <button (click)="login(loginBox.value)">Login</button>
+  </ng-container>
+</div>
+

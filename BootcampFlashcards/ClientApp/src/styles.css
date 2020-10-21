@@ -14,3 +14,61 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.navbar {
+  background-color: #F8F8FF;
+}
+
+
+
+.navbar-brand:active {
+  color: aqua;
+}
+
+
+
+.center {
+  background-color: aliceblue;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  width: 80%;
+  min-height: 100vh;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+
+
+body {
+  background-color: #F2F2F2;
+}
+
+
+
+h1 {
+  color: #00008B;
+}
+
+
+
+input {
+  width: 200px;
+  float: inherit;
+  background-color: lightgray;
+}
+
+
+
+  input:focus {
+    background-color: white;
+  }
+
+
+
+label {
+  width: 80px;
+  float: left;
+  text-align: left;
+  color: #0040ff;
+}

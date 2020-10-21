@@ -1,5 +1,11 @@
-<ng-container *ngIf="card">  
-  Question: <input [(ngModel)]="card.question" /><br /><br />
-  Answer: <input [(ngModel)]="card.answer" /><br /><br />
-  <button (click)="addCard()">Add Flashcard</button><br /><br />
-</ng-container>
+<div>
+  <ng-container *ngIf="card">
+    Question:&nbsp;<input [(ngModel)]="card.question" /><br />
+    <br />
+    Answer:&nbsp;<input [(ngModel)]="card.answer" /><br />
+    <br />
+    <button (click)="addCard()">Add Flashcard</button>
+    <br /><br />
+  </ng-container>
+</div>
+
