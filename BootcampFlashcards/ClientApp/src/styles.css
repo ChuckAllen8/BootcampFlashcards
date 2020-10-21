@@ -19,13 +19,23 @@ code {
   background-color: #F8F8FF;
 }
 
-
+.nav-item:active{
+    background-color:black;
+}
 
 .navbar-brand:active {
   color: aqua;
+  background-color: black;
+  
 }
 
+.nav-link {
+    color: #0366d6;
+}
 
+.nav-link:active{
+    color: aqua;
+}
 
 .center {
   background-color: aliceblue;
@@ -36,21 +46,16 @@ code {
   min-height: 100vh;
   padding: 10px 10px 10px 10px;
   text-align: center;
+  border-style:solid;
 }
-
-
 
 body {
   background-color: #F2F2F2;
 }
 
-
-
 h1 {
   color: #00008B;
 }
-
-
 
 input {
   width: 200px;
@@ -58,13 +63,9 @@ input {
   background-color: lightgray;
 }
 
-
-
   input:focus {
     background-color: white;
   }
-
-
 
 label {
   width: 80px;
@@ -72,3 +73,5 @@ label {
   text-align: left;
   color: #0040ff;
 }
+
+
