@@ -1,9 +1,9 @@
 <div>
   <fieldset class="pageLayout">
     <ng-container *ngIf="card">
-      <input [(ngModel)]="card.question" placeholder="Type Your Question Here"/><br />
+      <input [(ngModel)]="card.question" placeholder="Type Your Question Here" [ngClass]="{'error-border': questionError}" /><br />
       <br />
-      <input [(ngModel)]="card.answer" placeholder="Type Your Answer Here"/><br />
+      <input [(ngModel)]="card.answer" placeholder="Type Your Answer Here" [ngClass]="{'error-border': answerError}" /><br />
       <br />
       <button (click)="addCard()">Add Flashcard</button>
       <br /><br />

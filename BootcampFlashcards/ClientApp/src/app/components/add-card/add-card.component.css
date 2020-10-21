@@ -19,7 +19,7 @@ button {
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: black;
+  color: #4f95da;
   font-weight: bold;
   background-color: white;
   border: solid 2px;
@@ -29,11 +29,16 @@ button {
 
 button:hover {
   background-color: #4f95da;
+  color: white;
 }
 
 button:active {
   background-color: #4f95da;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
-  color: black;
+  color: white;
+}
+
+.error-border {
+    border-color: red;
 }

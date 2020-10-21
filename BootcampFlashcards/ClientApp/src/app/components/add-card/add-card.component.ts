@@ -11,10 +11,14 @@ import { FlashCardDataService } from '../../services/flash-card-data.service';
 export class AddCardComponent implements OnInit {
 
   card: Flashcard;
+  questionError: boolean;
+  answerError: boolean;
 
   @Output() added: EventEmitter<Flashcard> = new EventEmitter();
 
   constructor() {
+    this.questionError = false;
+    this.answerError = false;
   }
 
   ngOnInit() {
@@ -26,7 +30,26 @@ export class AddCardComponent implements OnInit {
   }
 
   addCard() {
-    this.added.emit(this.card);
-    this.newCard();
+    if (this.card.answer != '' && this.card.question != '') {
+      this.added.emit(this.card);
+      this.newCard();
+      this.answerError = false;
+      this.questionError = false;
+    }
+    else {
+      if (this.card.question == '') {
+        this.questionError = true;
+      }
+      else {
+        this.questionError = false;
+      }
+      if (this.card.answer == '') {
+        this.answerError = true;
+      }
+      else {
+        this.answerError = false;
+      }
+    }
+    
   }
 }
