@@ -1,3 +1,18 @@
+fieldset.pageLayout {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  padding-top: 25px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  font-weight: 300;
+  background-color: white;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #bbb;
+  margin-bottom: 10px;
+}
+
 button {
   padding: 3px 15px;
   font-size: 16px;
@@ -12,17 +27,13 @@ button {
   box-shadow: 0 5px #999;
 }
 
+button:hover {
+  background-color: #4f95da;
+}
 
-
-  button:hover {
-    background-color: #4f95da;
-  }
-
-
-
-  button:active {
-    background-color: #4f95da;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-    color: black;
-  }
+button:active {
+  background-color: #4f95da;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: black;
+}
