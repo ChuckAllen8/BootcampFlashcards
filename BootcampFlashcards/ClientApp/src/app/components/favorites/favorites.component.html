@@ -1,6 +1,7 @@
 <div class="center">
   <ng-container *ngIf="user.username">
     <app-flash-card *ngFor="let f of this.user.favorites" [card]="f" [isFavorite]="true" (remove)="onRemove($event)"></app-flash-card>
+    <h1 *ngIf="this.user.favorites.length == 0">No Favorites Here!</h1>
   </ng-container>
 </div>
 
