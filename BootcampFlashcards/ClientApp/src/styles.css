@@ -98,7 +98,7 @@ body {
 
 .box {
   z-index: 0;
-  position: absolute;
+  position: fixed;
   background-color: transparent;
   border: 6px solid rgba(255,255,255, 0.8);
   width: 60px;
