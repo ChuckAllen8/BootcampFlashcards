@@ -41,7 +41,8 @@ code {
 
 
 body {
-  background-color: #F2F2F2;
+  background-color: #6099fc;
+  background-image: linear-gradient(to bottom right, #6099fc, black);
 }
 
 
