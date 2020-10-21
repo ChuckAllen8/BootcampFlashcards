@@ -1,0 +1,98 @@
+.scene {
+  display: inline-block;
+  border-style: inset;
+  border-radius: 5px;
+  border-color: rgb(100, 100, 100);
+  border-width: medium;
+  margin: 5px;
+  width: 200px;
+  height: 220px;
+  perspective: 600px;
+}
+
+.flip-card {
+  height: 75%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  cursor: pointer;
+}
+
+.flip-card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card:hover {
+  background-color: #4F95DA;
+}
+
+.flip-card-face.front {
+  transform: rotateY( 180deg );
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.flip-card-face.back {
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.flip-card-bottom {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+  justify-content: center;
+  vertical-align: middle;
+  border-top: 2px solid black;
+  border-radius: 5px;
+}
+
+
+button {
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid #91C9FF;
+  outline: none;
+  transition: 0.25s ease-in-out;
+}
+
+
+
+  button:hover {
+    transition: 0.25s ease-in-out;
+    background: #4F95DA;
+  }
+
+
+
+    button:hover svg {
+      stroke-dashoffset: -480;
+    }
+
+
+
+  button span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }

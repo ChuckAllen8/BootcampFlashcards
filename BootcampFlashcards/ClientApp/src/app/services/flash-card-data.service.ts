@@ -13,10 +13,13 @@ export class FlashCardDataService {
   flashcardUrl: string = 'api/flashcards';
   favoriteUrl: string = 'api/favorites';
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private user: SignedInUserService) {
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
     this.allCards = [];
-    this.getFlashCards().subscribe(results => this.addCardsToList(results));
+    this.refresh();
+  }
 
+  refresh() {
+    this.getFlashCards().subscribe(results => this.addCardsToList(results));
   }
 
   addCardsToList(cardList: Flashcard[]) {
@@ -39,17 +42,17 @@ export class FlashCardDataService {
     return this.http.post<Flashcard>(this.baseUrl + this.flashcardUrl, card);
   }
 
-  getFavorites(): Observable<Flashcard[]> {
-    return this.http.get<Flashcard[]>(this.baseUrl + this.favoriteUrl + `/${this.user.username}`);
+  getFavorites(user: string): Observable<Flashcard[]> {
+    return this.http.get<Flashcard[]>(this.baseUrl + this.favoriteUrl + `/${user}`);
   }
 
-  addFavorites(questionID: number): Observable<{}> {
+  addFavorites(user: string, questionID: number): Observable<{}> {
     let url = this.baseUrl + this.favoriteUrl;
-    let fav: Favorite = { username: this.user.username, questionID: questionID }
+    let fav: Favorite = { username: user, questionID: questionID }
     return this.http.post<Favorite>(url, fav);
   }
 
-  deleteFavorite(question_id: number) {
-    return this.http.delete(this.baseUrl + this.favoriteUrl + `/${this.user.username}/${question_id}`);
+  deleteFavorite(user: string, question_id: number) {
+    return this.http.delete(this.baseUrl + this.favoriteUrl + `/${user}/${question_id}`);
   }
 }
