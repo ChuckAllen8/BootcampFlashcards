@@ -50,6 +50,10 @@ code {
     color: white;
 }
 
+.navbar-toggler {
+    background-color: #4f95da;
+}
+
 .center {
   z-index: 2;
   background-color: aliceblue;

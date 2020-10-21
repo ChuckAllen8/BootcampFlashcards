@@ -26,7 +26,7 @@ export class FlashCardDataService {
     while (this.allCards.length > 0) {
       this.allCards.pop();
     }
-    cardList.forEach((value) => this.allCards.push(value));
+    cardList.forEach((value) => this.allCards.unshift(value));
   }
 
   getCards(): Observable<Flashcard[]> {
