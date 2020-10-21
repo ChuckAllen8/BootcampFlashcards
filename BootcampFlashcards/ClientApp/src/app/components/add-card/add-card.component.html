@@ -1,11 +1,13 @@
 <div>
-  <ng-container *ngIf="card">
-    Question:&nbsp;<input [(ngModel)]="card.question" /><br />
-    <br />
-    Answer:&nbsp;<input [(ngModel)]="card.answer" /><br />
-    <br />
-    <button (click)="addCard()">Add Flashcard</button>
-    <br /><br />
-  </ng-container>
+  <fieldset class="pageLayout">
+    <ng-container *ngIf="card">
+      <input [(ngModel)]="card.question" placeholder="Type Your Question Here"/><br />
+      <br />
+      <input [(ngModel)]="card.answer" placeholder="Type Your Answer Here"/><br />
+      <br />
+      <button (click)="addCard()">Add Flashcard</button>
+      <br /><br />
+    </ng-container>
+  </fieldset>
 </div>
 
